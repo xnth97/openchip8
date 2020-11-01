@@ -1,0 +1,631 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB684DE1254E97D500EC55C8 /* PONG in Resources */ = {isa = PBXBuildFile; fileRef = CB684DE0254E97D500EC55C8 /* PONG */; };
+		CB684DE9254EA07800EC55C8 /* SUBMARINE in Resources */ = {isa = PBXBuildFile; fileRef = CB684DE8254EA07800EC55C8 /* SUBMARINE */; };
+		CB70134D254E038D00905970 /* BLITZ in Resources */ = {isa = PBXBuildFile; fileRef = CB70134C254E038D00905970 /* BLITZ */; };
+		CB74FCE8254CAFD00080EC2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FCE7254CAFD00080EC2C /* AppDelegate.swift */; };
+		CB74FCEA254CAFD00080EC2C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FCE9254CAFD00080EC2C /* MainViewController.swift */; };
+		CB74FCEC254CAFD10080EC2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB74FCEB254CAFD10080EC2C /* Assets.xcassets */; };
+		CB74FCEF254CAFD10080EC2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB74FCED254CAFD10080EC2C /* Main.storyboard */; };
+		CB74FCFB254CAFD20080EC2C /* openchip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FCFA254CAFD20080EC2C /* openchip8Tests.swift */; };
+		CB74FD06254CAFD20080EC2C /* openchip8UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FD05254CAFD20080EC2C /* openchip8UITests.swift */; };
+		CB74FD21254CB23B0080EC2C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FD20254CB23B0080EC2C /* Renderer.swift */; };
+		CB74FD2C254CBFB10080EC2C /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FD2B254CBFB10080EC2C /* Keyboard.swift */; };
+		CB74FD34254CC2AE0080EC2C /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FD33254CC2AE0080EC2C /* Speaker.swift */; };
+		CB74FD39254CC3B20080EC2C /* VirtualMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FD38254CC3B20080EC2C /* VirtualMachine.swift */; };
+		CB74FD4C254CCE980080EC2C /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74FD4B254CCE980080EC2C /* Emulator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB74FCF7254CAFD20080EC2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB74FCDC254CAFD00080EC2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB74FCE3254CAFD00080EC2C;
+			remoteInfo = openchip8;
+		};
+		CB74FD02254CAFD20080EC2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB74FCDC254CAFD00080EC2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB74FCE3254CAFD00080EC2C;
+			remoteInfo = openchip8;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB684DE0254E97D500EC55C8 /* PONG */ = {isa = PBXFileReference; lastKnownFileType = file; path = PONG; sourceTree = "<group>"; };
+		CB684DE8254EA07800EC55C8 /* SUBMARINE */ = {isa = PBXFileReference; lastKnownFileType = file; path = SUBMARINE; sourceTree = "<group>"; };
+		CB70134C254E038D00905970 /* BLITZ */ = {isa = PBXFileReference; lastKnownFileType = file; path = BLITZ; sourceTree = "<group>"; };
+		CB74FCE4254CAFD00080EC2C /* openchip8-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "openchip8-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB74FCE7254CAFD00080EC2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB74FCE9254CAFD00080EC2C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CB74FCEB254CAFD10080EC2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB74FCEE254CAFD10080EC2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB74FCF0254CAFD10080EC2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB74FCF1254CAFD10080EC2C /* openchip8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openchip8.entitlements; sourceTree = "<group>"; };
+		CB74FCF6254CAFD20080EC2C /* openchip8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = openchip8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB74FCFA254CAFD20080EC2C /* openchip8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openchip8Tests.swift; sourceTree = "<group>"; };
+		CB74FCFC254CAFD20080EC2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB74FD01254CAFD20080EC2C /* openchip8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = openchip8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB74FD05254CAFD20080EC2C /* openchip8UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openchip8UITests.swift; sourceTree = "<group>"; };
+		CB74FD07254CAFD20080EC2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB74FD20254CB23B0080EC2C /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CB74FD2B254CBFB10080EC2C /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		CB74FD33254CC2AE0080EC2C /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		CB74FD38254CC3B20080EC2C /* VirtualMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualMachine.swift; sourceTree = "<group>"; };
+		CB74FD4B254CCE980080EC2C /* Emulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB74FCE1254CAFD00080EC2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB74FCF3254CAFD20080EC2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB74FCFE254CAFD20080EC2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB701351254E039200905970 /* roms */ = {
+			isa = PBXGroup;
+			children = (
+				CB684DE8254EA07800EC55C8 /* SUBMARINE */,
+				CB684DE0254E97D500EC55C8 /* PONG */,
+				CB70134C254E038D00905970 /* BLITZ */,
+			);
+			path = roms;
+			sourceTree = "<group>";
+		};
+		CB74FCDB254CAFD00080EC2C = {
+			isa = PBXGroup;
+			children = (
+				CB701351254E039200905970 /* roms */,
+				CB74FD16254CAFE40080EC2C /* openchip8-core */,
+				CB74FCE6254CAFD00080EC2C /* openchip8-mac */,
+				CB74FCF9254CAFD20080EC2C /* openchip8Tests */,
+				CB74FD04254CAFD20080EC2C /* openchip8UITests */,
+				CB74FCE5254CAFD00080EC2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB74FCE5254CAFD00080EC2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB74FCE4254CAFD00080EC2C /* openchip8-mac.app */,
+				CB74FCF6254CAFD20080EC2C /* openchip8Tests.xctest */,
+				CB74FD01254CAFD20080EC2C /* openchip8UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB74FCE6254CAFD00080EC2C /* openchip8-mac */ = {
+			isa = PBXGroup;
+			children = (
+				CB74FCE7254CAFD00080EC2C /* AppDelegate.swift */,
+				CB74FCE9254CAFD00080EC2C /* MainViewController.swift */,
+				CB74FCEB254CAFD10080EC2C /* Assets.xcassets */,
+				CB74FCED254CAFD10080EC2C /* Main.storyboard */,
+				CB74FCF0254CAFD10080EC2C /* Info.plist */,
+				CB74FCF1254CAFD10080EC2C /* openchip8.entitlements */,
+			);
+			path = "openchip8-mac";
+			sourceTree = "<group>";
+		};
+		CB74FCF9254CAFD20080EC2C /* openchip8Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CB74FCFA254CAFD20080EC2C /* openchip8Tests.swift */,
+				CB74FCFC254CAFD20080EC2C /* Info.plist */,
+			);
+			path = openchip8Tests;
+			sourceTree = "<group>";
+		};
+		CB74FD04254CAFD20080EC2C /* openchip8UITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB74FD05254CAFD20080EC2C /* openchip8UITests.swift */,
+				CB74FD07254CAFD20080EC2C /* Info.plist */,
+			);
+			path = openchip8UITests;
+			sourceTree = "<group>";
+		};
+		CB74FD16254CAFE40080EC2C /* openchip8-core */ = {
+			isa = PBXGroup;
+			children = (
+				CB74FD20254CB23B0080EC2C /* Renderer.swift */,
+				CB74FD2B254CBFB10080EC2C /* Keyboard.swift */,
+				CB74FD33254CC2AE0080EC2C /* Speaker.swift */,
+				CB74FD38254CC3B20080EC2C /* VirtualMachine.swift */,
+				CB74FD4B254CCE980080EC2C /* Emulator.swift */,
+			);
+			path = "openchip8-core";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB74FCE3254CAFD00080EC2C /* openchip8-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB74FD0A254CAFD20080EC2C /* Build configuration list for PBXNativeTarget "openchip8-mac" */;
+			buildPhases = (
+				CB74FCE0254CAFD00080EC2C /* Sources */,
+				CB74FCE1254CAFD00080EC2C /* Frameworks */,
+				CB74FCE2254CAFD00080EC2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "openchip8-mac";
+			packageProductDependencies = (
+			);
+			productName = openchip8;
+			productReference = CB74FCE4254CAFD00080EC2C /* openchip8-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB74FCF5254CAFD20080EC2C /* openchip8Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB74FD0D254CAFD20080EC2C /* Build configuration list for PBXNativeTarget "openchip8Tests" */;
+			buildPhases = (
+				CB74FCF2254CAFD20080EC2C /* Sources */,
+				CB74FCF3254CAFD20080EC2C /* Frameworks */,
+				CB74FCF4254CAFD20080EC2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB74FCF8254CAFD20080EC2C /* PBXTargetDependency */,
+			);
+			name = openchip8Tests;
+			productName = openchip8Tests;
+			productReference = CB74FCF6254CAFD20080EC2C /* openchip8Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB74FD00254CAFD20080EC2C /* openchip8UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB74FD10254CAFD20080EC2C /* Build configuration list for PBXNativeTarget "openchip8UITests" */;
+			buildPhases = (
+				CB74FCFD254CAFD20080EC2C /* Sources */,
+				CB74FCFE254CAFD20080EC2C /* Frameworks */,
+				CB74FCFF254CAFD20080EC2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB74FD03254CAFD20080EC2C /* PBXTargetDependency */,
+			);
+			name = openchip8UITests;
+			productName = openchip8UITests;
+			productReference = CB74FD01254CAFD20080EC2C /* openchip8UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB74FCDC254CAFD00080EC2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					CB74FCE3254CAFD00080EC2C = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					CB74FCF5254CAFD20080EC2C = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = CB74FCE3254CAFD00080EC2C;
+					};
+					CB74FD00254CAFD20080EC2C = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = CB74FCE3254CAFD00080EC2C;
+					};
+				};
+			};
+			buildConfigurationList = CB74FCDF254CAFD00080EC2C /* Build configuration list for PBXProject "openchip8" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB74FCDB254CAFD00080EC2C;
+			packageReferences = (
+			);
+			productRefGroup = CB74FCE5254CAFD00080EC2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB74FCE3254CAFD00080EC2C /* openchip8-mac */,
+				CB74FCF5254CAFD20080EC2C /* openchip8Tests */,
+				CB74FD00254CAFD20080EC2C /* openchip8UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB74FCE2254CAFD00080EC2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB70134D254E038D00905970 /* BLITZ in Resources */,
+				CB74FCEC254CAFD10080EC2C /* Assets.xcassets in Resources */,
+				CB74FCEF254CAFD10080EC2C /* Main.storyboard in Resources */,
+				CB684DE1254E97D500EC55C8 /* PONG in Resources */,
+				CB684DE9254EA07800EC55C8 /* SUBMARINE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB74FCF4254CAFD20080EC2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB74FCFF254CAFD20080EC2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB74FCE0254CAFD00080EC2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB74FCEA254CAFD00080EC2C /* MainViewController.swift in Sources */,
+				CB74FD39254CC3B20080EC2C /* VirtualMachine.swift in Sources */,
+				CB74FD21254CB23B0080EC2C /* Renderer.swift in Sources */,
+				CB74FD34254CC2AE0080EC2C /* Speaker.swift in Sources */,
+				CB74FD2C254CBFB10080EC2C /* Keyboard.swift in Sources */,
+				CB74FCE8254CAFD00080EC2C /* AppDelegate.swift in Sources */,
+				CB74FD4C254CCE980080EC2C /* Emulator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB74FCF2254CAFD20080EC2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB74FCFB254CAFD20080EC2C /* openchip8Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB74FCFD254CAFD20080EC2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB74FD06254CAFD20080EC2C /* openchip8UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB74FCF8254CAFD20080EC2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB74FCE3254CAFD00080EC2C /* openchip8-mac */;
+			targetProxy = CB74FCF7254CAFD20080EC2C /* PBXContainerItemProxy */;
+		};
+		CB74FD03254CAFD20080EC2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB74FCE3254CAFD00080EC2C /* openchip8-mac */;
+			targetProxy = CB74FD02254CAFD20080EC2C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB74FCED254CAFD10080EC2C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB74FCEE254CAFD10080EC2C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB74FD08254CAFD20080EC2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB74FD09254CAFD20080EC2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CB74FD0B254CAFD20080EC2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = openchip8/openchip8.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "openchip8-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.yuboqin.openchip8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CB74FD0C254CAFD20080EC2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = openchip8/openchip8.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "openchip8-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.yuboqin.openchip8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CB74FD0E254CAFD20080EC2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = openchip8Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = io.yuboqin.openchip8Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/openchip8.app/Contents/MacOS/openchip8";
+			};
+			name = Debug;
+		};
+		CB74FD0F254CAFD20080EC2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = openchip8Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = io.yuboqin.openchip8Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/openchip8.app/Contents/MacOS/openchip8";
+			};
+			name = Release;
+		};
+		CB74FD11254CAFD20080EC2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = openchip8UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.yuboqin.openchip8UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = openchip8;
+			};
+			name = Debug;
+		};
+		CB74FD12254CAFD20080EC2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = openchip8UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.yuboqin.openchip8UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = openchip8;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB74FCDF254CAFD00080EC2C /* Build configuration list for PBXProject "openchip8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB74FD08254CAFD20080EC2C /* Debug */,
+				CB74FD09254CAFD20080EC2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB74FD0A254CAFD20080EC2C /* Build configuration list for PBXNativeTarget "openchip8-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB74FD0B254CAFD20080EC2C /* Debug */,
+				CB74FD0C254CAFD20080EC2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB74FD0D254CAFD20080EC2C /* Build configuration list for PBXNativeTarget "openchip8Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB74FD0E254CAFD20080EC2C /* Debug */,
+				CB74FD0F254CAFD20080EC2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB74FD10254CAFD20080EC2C /* Build configuration list for PBXNativeTarget "openchip8UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB74FD11254CAFD20080EC2C /* Debug */,
+				CB74FD12254CAFD20080EC2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB74FCDC254CAFD00080EC2C /* Project object */;
+}
