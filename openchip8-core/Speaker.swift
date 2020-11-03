@@ -8,7 +8,7 @@
 import AppKit
 
 public protocol SpeakerProtocol {
-    func play(frequency: Float)
+    func play()
     func stop()
 }
 
@@ -16,7 +16,7 @@ public class Speaker: SpeakerProtocol {
     
     private let sound = NSSound(named: "Ping")
     
-    public func play(frequency: Float) {
+    public func play() {
         sound?.play()
     }
     

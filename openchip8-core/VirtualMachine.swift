@@ -380,7 +380,7 @@ public class VirtualMachine {
     
     private func playSound() {
         if soundTimer > 0 {
-            speaker.play(frequency: 440)
+            speaker.play()
         } else {
             speaker.stop()
         }
