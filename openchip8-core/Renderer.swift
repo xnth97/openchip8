@@ -5,8 +5,7 @@
 //  Created by Yubo Qin on 10/30/20.
 //
 
-import Foundation
-import SpriteKit
+import AppKit
 
 public protocol RendererProtocol {
     @discardableResult
@@ -20,7 +19,7 @@ public class Renderer: RendererProtocol {
     private static let width = 64
     private static let height = 32
     
-    private let pixelDimension: CGFloat
+    fileprivate let pixelDimension: CGFloat
     
     public var backgroundColor: NSColor {
         didSet {
@@ -33,21 +32,13 @@ public class Renderer: RendererProtocol {
         }
     }
     
-    private var pixels: [[Pixel]] = []
-    
-    public let scene: SKScene
-    
-    private struct Pixel {
-        var value: UInt8
-        let node: SKSpriteNode
-        
-        init(color: NSColor, dimension: CGFloat) {
-            value = 0
-            node = SKSpriteNode(color: color,
-                                size: CGSize(width: dimension, height: dimension))
-            node.anchorPoint = CGPoint(x: 0.0, y: 1.0)
-        }
+    public struct Pixel: Hashable {
+        let x: Int
+        let y: Int
     }
+
+    public lazy var view = RendererView(renderer: self)
+    fileprivate var pixels: Set<Pixel> = Set()
     
     public init(pixelDimension: CGFloat = 10.0,
                 backgroundColor: NSColor = .black,
@@ -55,13 +46,6 @@ public class Renderer: RendererProtocol {
         self.pixelDimension = pixelDimension
         self.backgroundColor = backgroundColor
         self.pixelColor = pixelColor
-        
-        scene = SKScene(size: CGSize(width: CGFloat(Self.width) * pixelDimension,
-                                     height: CGFloat(Self.height) * pixelDimension))
-        scene.anchorPoint = CGPoint(x: 0.0, y: 1.0)
-        scene.backgroundColor = backgroundColor
-        
-        initPixels()
     }
     
     /// Toggle a pixel. Note that origin point is at top left corner.
@@ -89,45 +73,69 @@ public class Renderer: RendererProtocol {
         }
         
         /// XOR
-        pixels[row][col].value ^= UInt8(1)
-        
-        /// Returns whether a pixel was erased or not
-        return pixels[row][col].value == UInt8(0)
+        let pixel = Pixel(x: col, y: row)
+        if pixels.contains(pixel) {
+            /// Returns whether a pixel was erased or not
+            pixels.remove(pixel)
+            return true
+        } else {
+            pixels.insert(pixel)
+            return false
+        }
     }
     
     public func render() {
-        for row in 0 ..< Self.height {
-            for col in 0 ..< Self.width {
-                let pixel = pixels[row][col]
-                pixel.node.color = pixel.value == UInt8(1) ? pixelColor : backgroundColor
-            }
+        DispatchQueue.main.async {
+            self.view.setNeedsDisplay(self.view.frame)
         }
     }
     
     public func clear() {
-        for row in 0 ..< Self.height {
-            for col in 0 ..< Self.width {
-                pixels[row][col].node.color = backgroundColor
-            }
-        }
+        pixels = Set()
     }
     
-    private func initPixels() {
-        for row in 0 ..< Self.height {
-            pixels.append(Array<Pixel>())
-            for col in 0 ..< Self.width {
-                let pixel = Pixel(color: backgroundColor, dimension: pixelDimension)
-                pixel.node.position = transformCoordinates(x: col, y: row)
-                scene.addChild(pixel.node)
-                pixels[row].append(pixel)
-            }
-        }
-    }
-    
-    private func transformCoordinates(x: Int, y: Int) -> CGPoint {
+    fileprivate func transformCoordinates(x: Int, y: Int) -> CGPoint {
         let xCor = CGFloat(x) * pixelDimension
-        let yCor = CGFloat(-y) * pixelDimension
+        let yCor = CGFloat(Self.height - y - 1) * pixelDimension
         return CGPoint(x: xCor, y: yCor)
     }
     
+}
+
+public class RendererView: NSView {
+
+    private unowned let renderer: Renderer
+
+    public init(renderer: Renderer) {
+        self.renderer = renderer
+        super.init(frame: .zero)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    public override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+
+        guard let context = NSGraphicsContext.current else {
+            return
+        }
+
+        context.cgContext.setFillColor(NSColor.black.cgColor)
+        context.cgContext.fill(dirtyRect)
+
+        var rects: [CGRect] = []
+        let pixels = renderer.pixels
+        for pixel in pixels {
+            let rect = CGRect(
+                origin: renderer.transformCoordinates(x: pixel.x, y: pixel.y),
+                size: CGSize(width: renderer.pixelDimension, height: renderer.pixelDimension))
+            rects.append(rect)
+        }
+        context.cgContext.setFillColor(NSColor.white.cgColor)
+        context.cgContext.fill(rects)
+    }
+
 }

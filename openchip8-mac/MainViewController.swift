@@ -11,7 +11,6 @@ import SpriteKit
 class MainViewController: NSViewController {
     
     private let renderer = Renderer()
-    private let skView = SKView()
     
     private var keysPressed: [KeyCode: Bool] = [:]
     private var nextKeyPressBlock: ((KeyCode) -> Void)?
@@ -20,17 +19,17 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.addSubview(skView)
-        skView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(renderer.view)
+        renderer.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            skView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            skView.topAnchor.constraint(equalTo: view.topAnchor),
-            skView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            skView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            renderer.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            renderer.view.topAnchor.constraint(equalTo: view.topAnchor),
+            renderer.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            renderer.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            view.widthAnchor.constraint(equalToConstant: 640.0),
+            view.heightAnchor.constraint(equalToConstant: 320.0),
         ])
-        
-        skView.presentScene(renderer.scene)
         
         NSEvent.addLocalMonitorForEvents(matching: .keyUp) { event in
             self.handleKeyUp(with: event)
