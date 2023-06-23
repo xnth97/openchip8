@@ -5,7 +5,7 @@
 //  Created by Yubo Qin on 10/30/20.
 //
 
-import AppKit
+import Foundation
 import Combine
 
 public protocol RendererProtocol {
@@ -22,17 +22,6 @@ public class Renderer: ObservableObject, RendererProtocol {
     
     private let pixelDimension: CGFloat
     
-    public var backgroundColor: NSColor {
-        didSet {
-            render()
-        }
-    }
-    public var pixelColor: NSColor {
-        didSet {
-            render()
-        }
-    }
-    
     public struct Pixel: Hashable {
         let x: Int
         let y: Int
@@ -43,12 +32,8 @@ public class Renderer: ObservableObject, RendererProtocol {
     /// Underlying storage.
     private var _p: Set<Pixel> = []
     
-    public init(pixelDimension: CGFloat = 10.0,
-                backgroundColor: NSColor = .black,
-                pixelColor: NSColor = .white) {
+    public init(pixelDimension: CGFloat = 10.0) {
         self.pixelDimension = pixelDimension
-        self.backgroundColor = backgroundColor
-        self.pixelColor = pixelColor
     }
     
     /// Toggle a pixel. Note that origin point is at top left corner.
