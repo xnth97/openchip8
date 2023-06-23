@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppKit
 
 public typealias KeyCode = UInt8
 
@@ -32,3 +33,53 @@ public let QwertyKeyboardMap: [UInt16: KeyCode] = [
     8: 0xB,  // C
     9: 0xF,  // V
 ]
+
+public class Keyboard: KeyboardProtocol {
+
+    private var keysPressed: [KeyCode: Bool] = [:]
+    private var nextKeyPressBlock: ((KeyCode) -> Void)?
+
+    public init() {
+        NSEvent.addLocalMonitorForEvents(matching: .keyUp) { event in
+            self.handleKeyUp(with: event)
+            /// return nil to tell OS that event is handled.
+            return nil
+        }
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+            self.handleKeyDown(with: event)
+            return nil
+        }
+    }
+
+    public func isKeyPressed(_ keyCode: KeyCode) -> Bool {
+        return keysPressed[keyCode] ?? false
+    }
+
+    public func handleNextKeyPress(_ block: @escaping (KeyCode) -> Void) {
+        nextKeyPressBlock = block
+    }
+
+    private func handleKeyUp(with event: NSEvent) {
+        guard let keyCode = getKeyCode(from: event) else {
+            return
+        }
+        keysPressed[keyCode] = false
+    }
+
+    private func handleKeyDown(with event: NSEvent) {
+        guard let keyCode = getKeyCode(from: event) else {
+            return
+        }
+        keysPressed[keyCode] = true
+
+        if let nextKeyBlock = nextKeyPressBlock {
+            nextKeyBlock(keyCode)
+            nextKeyPressBlock = nil
+        }
+    }
+
+    private func getKeyCode(from event: NSEvent) -> KeyCode? {
+        return QwertyKeyboardMap[event.keyCode]
+    }
+
+}

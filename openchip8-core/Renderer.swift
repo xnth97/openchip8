@@ -6,6 +6,7 @@
 //
 
 import AppKit
+import Combine
 
 public protocol RendererProtocol {
     @discardableResult
@@ -14,12 +15,12 @@ public protocol RendererProtocol {
     func clear()
 }
 
-public class Renderer: RendererProtocol {
+public class Renderer: ObservableObject, RendererProtocol {
     
     private static let width = 64
     private static let height = 32
     
-    fileprivate let pixelDimension: CGFloat
+    private let pixelDimension: CGFloat
     
     public var backgroundColor: NSColor {
         didSet {
@@ -37,8 +38,10 @@ public class Renderer: RendererProtocol {
         let y: Int
     }
 
-    public lazy var view = RendererView(renderer: self)
-    fileprivate var pixels: Set<Pixel> = Set()
+    /// Object to drive UI change.
+    @Published public private(set) var pixels: Set<Pixel> = []
+    /// Underlying storage.
+    private var _p: Set<Pixel> = []
     
     public init(pixelDimension: CGFloat = 10.0,
                 backgroundColor: NSColor = .black,
@@ -74,68 +77,39 @@ public class Renderer: RendererProtocol {
         
         /// XOR
         let pixel = Pixel(x: col, y: row)
-        if pixels.contains(pixel) {
+        if _p.contains(pixel) {
             /// Returns whether a pixel was erased or not
-            pixels.remove(pixel)
+            _p.remove(pixel)
             return true
         } else {
-            pixels.insert(pixel)
+            _p.insert(pixel)
             return false
         }
     }
     
     public func render() {
         DispatchQueue.main.async {
-            self.view.setNeedsDisplay(self.view.frame)
+            self.pixels = self._p
         }
     }
     
     public func clear() {
-        pixels = Set()
+        DispatchQueue.main.async {
+            self.pixels = []
+            self._p = []
+        }
     }
     
-    fileprivate func transformCoordinates(x: Int, y: Int) -> CGPoint {
+    private func transformCoordinates(x: Int, y: Int) -> CGPoint {
         let xCor = CGFloat(x) * pixelDimension
-        let yCor = CGFloat(Self.height - y - 1) * pixelDimension
+        let yCor = CGFloat(y) * pixelDimension
         return CGPoint(x: xCor, y: yCor)
     }
+
+    public func pixelToRect(_ pixel: Pixel) -> CGRect {
+        return CGRect(
+            origin: transformCoordinates(x: pixel.x, y: pixel.y),
+            size: CGSize(width: pixelDimension, height: pixelDimension))
+    }
     
-}
-
-public class RendererView: NSView {
-
-    private unowned let renderer: Renderer
-
-    public init(renderer: Renderer) {
-        self.renderer = renderer
-        super.init(frame: .zero)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    public override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        guard let context = NSGraphicsContext.current else {
-            return
-        }
-
-        context.cgContext.setFillColor(NSColor.black.cgColor)
-        context.cgContext.fill(dirtyRect)
-
-        var rects: [CGRect] = []
-        let pixels = renderer.pixels
-        for pixel in pixels {
-            let rect = CGRect(
-                origin: renderer.transformCoordinates(x: pixel.x, y: pixel.y),
-                size: CGSize(width: renderer.pixelDimension, height: renderer.pixelDimension))
-            rects.append(rect)
-        }
-        context.cgContext.setFillColor(NSColor.white.cgColor)
-        context.cgContext.fill(rects)
-    }
-
 }

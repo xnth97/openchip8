@@ -20,7 +20,7 @@ public class Emulator {
                 speaker: SpeakerProtocol) {
         vm = VirtualMachine(renderer: renderer, keyboard: keyboard, speaker: speaker)
         
-        let data = try! Data(contentsOf: Bundle.main.url(forResource: "SUBMARINE", withExtension: "")!)
+        let data = try! Data(contentsOf: Bundle.main.url(forResource: "PONG", withExtension: "")!)
         vm.loadRom(from: data)
     }
     

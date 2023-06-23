@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
-   version = "1.3">
+   LastUpgradeVersion = "1430"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB74FCE3254CAFD00080EC2C"
-               BuildableName = "openchip8-mac.app"
-               BlueprintName = "openchip8-mac"
+               BlueprintIdentifier = "CB4C41332A45792000F72101"
+               BuildableName = "openchip8.app"
+               BlueprintName = "openchip8"
                ReferencedContainer = "container:openchip8.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,29 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB74FCF5254CAFD20080EC2C"
-               BuildableName = "openchip8Tests.xctest"
-               BlueprintName = "openchip8Tests"
-               ReferencedContainer = "container:openchip8.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB74FD00254CAFD20080EC2C"
-               BuildableName = "openchip8UITests.xctest"
-               BlueprintName = "openchip8UITests"
-               ReferencedContainer = "container:openchip8.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -64,9 +43,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB74FCE3254CAFD00080EC2C"
-            BuildableName = "openchip8-mac.app"
-            BlueprintName = "openchip8-mac"
+            BlueprintIdentifier = "CB4C41332A45792000F72101"
+            BuildableName = "openchip8.app"
+            BlueprintName = "openchip8"
             ReferencedContainer = "container:openchip8.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,9 +60,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB74FCE3254CAFD00080EC2C"
-            BuildableName = "openchip8-mac.app"
-            BlueprintName = "openchip8-mac"
+            BlueprintIdentifier = "CB4C41332A45792000F72101"
+            BuildableName = "openchip8.app"
+            BlueprintName = "openchip8"
             ReferencedContainer = "container:openchip8.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
